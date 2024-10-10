@@ -194,7 +194,7 @@ jobs:
         run: |
           sudo apt update && sudo apt install -y lcov
           ls
-          lcov --remove lcov.info 'test/*' 'contracts/dev-contracts/*' 'lib/*' --output-file lcov.info --rc branch_coverage=1
+          lcov --ignore-errors branch --remove lcov.info 'test/*' 'contracts/dev-contracts/*' 'lib/*' --output-file lcov.info --rc branch_coverage=1
 
       - name: Post coverage report
         if: github.event_name == 'pull_request'
