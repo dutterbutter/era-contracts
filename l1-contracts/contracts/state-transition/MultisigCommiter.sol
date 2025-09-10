@@ -26,6 +26,8 @@ contract MultisigCommiter is ValidatorTimelock, EIP712Upgradeable {
 
 	constructor(address _bridgehubAddr) ValidatorTimelock(_bridgehubAddr) {}
 
+	//TODO __EIP712_init
+
     function commitBatchesSharedBridge(
 		address _chainAddress,
         uint256 _processBatchFrom,
