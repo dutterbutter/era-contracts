@@ -128,7 +128,6 @@ jobs:
           mode: run
           protocolVersion: 29
           evmInterpreter: true
-          logFilePath: 'anvil_zksync.log'
 
       - name: Install dependencies
         run: yarn
@@ -149,10 +148,6 @@ jobs:
 
       - name: Run tests
         run: yarn sc test
-
-      - name: Print output logs of anvil-zksync
-        if: always()
-        run: cat anvil_zksync.log
 
   test-contracts-foundry:
     needs: [lint]
